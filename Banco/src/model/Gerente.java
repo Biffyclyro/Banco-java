@@ -1,6 +1,6 @@
 package model;
 
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticavel {
     private int senha;
     private int numeroDeFuncionariosGerenciados;
 
@@ -14,6 +14,8 @@ public class Gerente extends Funcionario {
         this.senha=senha;
         
     }
+
+       
     
     public int getSenha(){
         return senha;
@@ -41,7 +43,7 @@ public class Gerente extends Funcionario {
 
     @Override
     public double getBonificacao() {
-        return super.getBonificacao()+1000;
+        return this.getSalario()* 1.4 + 1000;
         
     }
     
