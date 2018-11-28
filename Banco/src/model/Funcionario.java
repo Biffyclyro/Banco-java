@@ -38,7 +38,11 @@ public abstract class Funcionario {
         return salario;
     }
 
+
     public abstract double getBonificacao();
+    public final double mostra(){
+        return this.getBonificacao();
+    }
     
     
     

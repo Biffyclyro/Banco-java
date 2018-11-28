@@ -7,6 +7,7 @@ import model.ContaPoupanca;
 import model.Funcionario;
 import model.Conta;
 import model.AtualizadorDeContas;
+import model.Banco;
 import model.Diretor;
 import model.GerenciadorDeImpostoDeRenda;
 import model.SeguroDeVida;
@@ -43,13 +44,31 @@ public class Test {
 
         gerenciador.adiciona(cc);
 
+       
+
         System.out.println(gerenciador.getTotal());
 
 
-
+        System.out.println(g1.getNome()+ g1.mostra());
+        System.out.println(d1.getNome());
         System.out.println(cc.calculaTributos());
         System.out.println("Saldo total: " + atualizador.getSaldoTotal());
        // System.out.println(g1.getBonificacao());
+       Banco banco = new Banco();
+
+
+       banco.adicionarConta(cc);
+       banco.adicionarConta(cc1);
+       banco.adicionarConta(cp);
+
+       exibeContasBanco(banco);
+    }
+
+    private static void exibeContasBanco(Banco b) {
+        for (Conta c : b.getContas()) {
+            System.out.println(c.getSaldo());            
+        }
+        
     }
         
     
